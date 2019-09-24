@@ -1,13 +1,15 @@
 import React from "react";
-import questions from "./API/questions";
+// import questions from "./API/questions";
 import Header from "./components/Header";
 import QuestionList from "./components/QuestionList";
 import Result from "./components/Result";
+import Start from "./components/Start";
+import Trivia from "./API/Trivia";
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      question: questions,
+      questions: [],
       score: 0,
       start: false,
       finish: false
@@ -27,19 +29,34 @@ class App extends React.Component {
     }
   };
 
-  start = flag => {
-    if (flag === true) {
-      this.setState({
-        start: true
-      });
-    }
+  // start = flag => {
+  //   if (flag === true) {
+  //     this.setState({
+  //       start: true
+  //     });
+  //   }
+  // };
+
+  starte = async term => {
+    console.log(term);
+    const response = await Trivia.get("/api.php", {
+      params: {
+        amount: term.amount,
+        category: term.category,
+        difficulty: term.difficulty
+      }
+    });
+    this.setState({ questions: response.data.results, start: true });
   };
+
   render() {
     return (
       <div className={"container"}>
-        <Header start={this.start} />
+        <Start starte={this.starte} />
+        {this.state.questions.length}
+
         {this.state.finish === false && this.state.start === true && (
-          <QuestionList ques={questions} selected={this.selected} />
+          <QuestionList ques={this.state.questions} selected={this.selected} />
         )}
 
         {this.state.finish === false && this.state.start === true && (

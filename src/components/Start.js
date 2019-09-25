@@ -1,8 +1,8 @@
 import React from "react";
-
+import "../Style/Start.css";
 class Start extends React.Component {
   state = {
-    amount: 0,
+    amount: 10,
     category: 18,
     difficulty: "easy"
   };
@@ -13,26 +13,30 @@ class Start extends React.Component {
   };
   render() {
     return (
-      <div className="container">
-        <form onSubmit={this.onFormSubmit}>
+      <div className="ui box">
+        <form className="ui form" onSubmit={this.onFormSubmit}>
           <div>
-            <label className="label">
+            <label className="ui label">
               ENTER AMOUNT OF QUESTIONS BELOW '40' &#128591;
             </label>
             <br></br>
-            <input
-              type="text"
-              value={this.state.amount}
-              onChange={e => {
-                this.setState({ amount: e.target.value });
-              }}
-            />
+            <div className="ui input">
+              <input
+                type="text"
+                value={this.state.amount}
+                onChange={e => {
+                  this.setState({ amount: e.target.value });
+                }}
+              />
+            </div>
           </div>
+          <br></br>
 
           <div>
-            <label>SELECT CATEGORY&#128226;</label>
+            <label className="ui label">SELECT CATEGORY&#128226;</label>
             <br></br>
             <select
+              className="selection"
               value={this.state.category}
               onChange={e => {
                 this.setState({ category: e.target.value });
@@ -45,7 +49,9 @@ class Start extends React.Component {
             </select>
           </div>
           <div>
-            Enter Difficulty
+            <br></br>
+            <label className="ui label">ENTER DIFFICULTY &#128226;</label>
+
             <select
               value={this.state.difficulty}
               onChange={e => {
@@ -57,6 +63,7 @@ class Start extends React.Component {
               <option value="hard">Hard</option>
             </select>
           </div>
+          <br></br>
           <input type="submit" value="Start TEST" />
         </form>
       </div>

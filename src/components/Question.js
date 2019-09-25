@@ -1,16 +1,21 @@
-import React, { useState } from "react";
-var x = Math.floor(Math.random() * 4);
+import React, { useState, useEffect } from "react";
+
 const Question = ({ question, answers, correct, selected }) => {
   const [answer, SetAnswer] = useState("");
   const [done, setDone] = useState("");
+  const [set, setSet] = useState(0);
   let flag = false;
-  console.log(x);
-
+  if (set === 0) {
+    const rand = Math.floor(Math.random() * 4);
+    console.log(rand);
+    answers.splice(rand, 0, correct);
+    setSet(1);
+  }
   const anslist = answers.map(ans => {
     return (
       <div>
         <button
-          className={"btn btn-primary"}
+          className={"ui button"}
           onClick={() => {
             SetAnswer(ans);
             if (ans === correct) {

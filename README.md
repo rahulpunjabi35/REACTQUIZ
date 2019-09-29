@@ -9,4 +9,4 @@ And solve questions report card is generated at the end
 * clone my repo
 * Hit npm install to install all dependencies
 * npm start 
-npm start will start deploying on localhost://3000
+

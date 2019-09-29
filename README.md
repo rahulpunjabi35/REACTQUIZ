@@ -4,9 +4,9 @@
 Choose your Category ,type of difficulty
 And solve questions
 ```
-###Installing
+### Installing
 * clone my repo
 * hit npm install to install all dependencies
 * npm start
  
-###Report card is generated at the end
+### Report card is generated at the end

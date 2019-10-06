@@ -43,9 +43,12 @@ class Start extends React.Component {
               }}
             >
               <option value="18">Computer Science</option>
-              <option value="23">History</option>
-              <option value="21">Sports</option>
+              <option value="23">HISTORY</option>
+              <option value="21">SPORTS</option>
               <option value="24">POLITICS</option>
+              <option value="19">MATHS</option>
+              <option value="11">Films</option>
+              <option value="26">Celebrities</option>
             </select>
           </div>
           <div>

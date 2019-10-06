@@ -6,7 +6,7 @@ Choose your Category ,type of difficulty
 And solve questions report card is generated at the end
 ```
 ```
-Live -https://safe-harbor-49504.herokuapp.com/
+checkout this app [Live](https://safe-harbor-49504.herokuapp.com/)
 ```
 ### Installing
 * clone my repo
